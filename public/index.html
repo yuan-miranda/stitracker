@@ -13,7 +13,7 @@
         async function loadCampuses() {
             const res = await fetch("/api/campuses");
             const data = await res.json();
-            document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+            document.getElementById("output").textContent = JSON.stringify(data, null, 4);
         }
 
         loadCampuses();
