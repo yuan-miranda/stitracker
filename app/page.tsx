@@ -1,6 +1,7 @@
 // app/page.tsx
 'use client';
 
+import { Analytics } from "@vercel/analytics/next";
 import { useEffect, useState } from "react";
 
 const Home = () => {
@@ -16,12 +17,15 @@ const Home = () => {
 	}, []);
 
 	return (
-		<main>
-			<pre>
-				{JSON.stringify(campuses, null, 4)}
-			</pre>
-		</main>
-	)
+		<>
+			<Analytics />
+			<main>
+				<pre>
+					{JSON.stringify(campuses, null, 4)}
+				</pre>
+			</main>
+		</>
+	);
 }
 
 export default Home;
