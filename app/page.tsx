@@ -1,5 +1,5 @@
 // app/page.tsx
-'use client';
+"use client"
 
 import { Analytics } from "@vercel/analytics/next";
 import { useEffect, useState } from "react";
