@@ -4,6 +4,7 @@ import * as React from "react"
 import {
     Calendar,
     Info,
+    Spline,
 } from "lucide-react"
 
 import { NavProjects } from "@/components/nav-projects"
@@ -39,6 +40,11 @@ const data = {
             url: "ondue",
             icon: Calendar,
         },
+        {
+            name: "F-line",
+            url: "fline",
+            icon: Spline,
+        }
     ],
 }
 

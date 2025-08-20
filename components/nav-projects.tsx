@@ -1,51 +1,51 @@
 "use client"
 
 import {
-  MoreHorizontal,
-  type LucideIcon,
+    MoreHorizontal,
+    type LucideIcon,
 } from "lucide-react"
 
 import {
-  SidebarGroup,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  useSidebar,
+    SidebarGroup,
+    SidebarGroupLabel,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
+    useSidebar,
 } from "@/components/ui/sidebar"
 
 export function NavProjects({
-  projects,
+    projects,
 }: {
-  projects: {
-    name: string
-    url: string
-    icon: LucideIcon
-  }[]
+    projects: {
+        name: string
+        url: string
+        icon: LucideIcon
+    }[]
 }) {
-  useSidebar()
+    useSidebar()
 
-  return (
-    <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>Tools</SidebarGroupLabel>
-      <SidebarMenu>
-        {projects.map((item) => (
-          <SidebarMenuItem key={item.name}>
-            <SidebarMenuButton asChild>
-              <a href={item.url}>
-                <item.icon />
-                <span>{item.name}</span>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        ))}
-        <SidebarMenuItem>
-          <SidebarMenuButton>
-            <MoreHorizontal />
-            <span>Ginagawa pa</span>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-      </SidebarMenu>
-    </SidebarGroup>
-  )
+    return (
+        <SidebarGroup className="group-data-[collapsible=icon]:hidden">
+            <SidebarGroupLabel>Tools</SidebarGroupLabel>
+            <SidebarMenu>
+                {projects.map((item) => (
+                    <SidebarMenuItem key={item.name}>
+                        <SidebarMenuButton asChild>
+                            <a href={item.url}>
+                                <item.icon />
+                                <span>{item.name}</span>
+                            </a>
+                        </SidebarMenuButton>
+                    </SidebarMenuItem>
+                ))}
+                <SidebarMenuItem>
+                    <SidebarMenuButton>
+                        <MoreHorizontal />
+                        <span>Ginagawa pa</span>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+            </SidebarMenu>
+        </SidebarGroup>
+    )
 }
