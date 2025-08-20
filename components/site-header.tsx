@@ -1,13 +1,16 @@
 "use client"
 
 import { SidebarIcon } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { useSidebar } from "@/components/ui/sidebar"
 import { CalendarDialog } from "./calendar-dialog"
 
-export function SiteHeader() {
+interface SiteHeaderProps {
+    showCalendar?: boolean
+}
+
+export function SiteHeader({ showCalendar }: SiteHeaderProps) {
     const { toggleSidebar } = useSidebar()
 
     return (
@@ -22,7 +25,9 @@ export function SiteHeader() {
                     <SidebarIcon />
                 </Button>
                 <Separator orientation="vertical" className="mr-2 h-4" />
-                {/* <CalendarDialog className="w-full sm:ml-auto sm:w-auto" /> */}
+                {showCalendar ? (
+                    <CalendarDialog className="w-full sm:ml-auto sm:w-auto" />
+                ) : null}
             </div>
         </header>
     )
